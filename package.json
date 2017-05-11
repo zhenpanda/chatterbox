@@ -1,0 +1,19 @@
+{
+  "name": "chatterbox",
+  "version": "1.0.0",
+  "description": "AI chat bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhenpanda/chatterbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhenpanda/chatterbox/issues"
+  },
+  "homepage": "https://github.com/zhenpanda/chatterbox#readme"
+}
