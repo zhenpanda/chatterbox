@@ -12,7 +12,7 @@ Profile: Program personality of the bot
 /*
 
   B-2S0MA: Self-aware/Happy bot/Heart
-
+  
   1. Lots of happy emojes
   2. fake typing to...a spam of messages, short quick messgaes
   3. Changing of typeing with, ALL CAPs and drawn out letters YESSSSSSSS!
@@ -31,5 +31,6 @@ Profile: Program personality of the bot
   Hard-coded leading questions:
 
 
-
 */
+
+// import from library of knowledge

@@ -1,4 +1,5 @@
 const Conversation = require('./controllers/conversation');
+const Brain = require('./bot/brain');
 
 module.exports = function(app) {
 
@@ -14,6 +15,17 @@ module.exports = function(app) {
   app.get('/addCount', function(req, res) {
     Conversation.addCount();
     res.send({message: "added count..."})
+  });
+
+  app.get('/testbot', function(req, res) {
+    // testing
+    var bot = new Brain();
+    bot.initiation("init");
+
+    let receivedMessage = "How are you doing today?";
+    bot.interact(receivedMessage);
+
+    res.send({message: "bot console tests"})
   });
 
   //

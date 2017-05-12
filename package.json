@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/zhenpanda/chatterbox/issues"
   },
-  "homepage": "https://github.com/zhenpanda/chatterbox#readme"
+  "homepage": "https://github.com/zhenpanda/chatterbox#readme",
+  "dependencies": {
+    "thesaurus-com": "^1.1.3"
+  }
 }

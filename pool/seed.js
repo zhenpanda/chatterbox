@@ -7,18 +7,30 @@
 
   key words connections
 
-  1. Pyschology: happy, sad, mad, emtion related
-  2. Traveling: go, move, action verbs
-  3. Culture: books, movies, games
-  4. People: Famous person, Singer etc.
-  5. Activities: partying, clubbing, dancing
-  6. Jokes: jokes
-  7. Events: historical events
-  8. Confused: can not compute
-
   Leading questions db: questions to kick off a converstion or start a new topic.
   To try and engage the user.
 
-  
+  goal of the bot is to have monologs
+
+
+*/
+
+// Leading topics: the self-aware bot...
+/*
+
+  key words to speak
+  key words to look for when listening
+
+    1. soul
+    2. real
+    3. meaning
+    4. control
+    5. enough
+    6. fair
+    7. lost
+    8. who am i
+    9. free will
+    10. knowing self
+
 
 */
