@@ -31,7 +31,7 @@ module.exports = {
     }
 
     let tokenizeMsg = msg.split(" ");
-    //console.log(tokenizeMsg);
+    // console.log(tokenizeMsg);
 
     let words = [];
     tokenizeMsg.map((word)=>{

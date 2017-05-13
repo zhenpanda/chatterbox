@@ -6,12 +6,14 @@ const morgan = require('morgan');
 // app config
 const app = express();
 const router = require('./router');
-
 // db config
 const mongoose = require('mongoose');
 
 // seed
 // const seeder = require('./seed');
+
+//use cors
+const cors = require('cors');
 
 /*
 // db setup
@@ -28,6 +30,7 @@ mongoose.connect(uristring, function (err, res) {
 // App setup
 // middleware thru express
 app.use(morgan('combined')); // logging debugging
+app.use(cors());
 app.use(bodyParser.json({ type: '*/*' })); // parse incoming request
 router(app);
 

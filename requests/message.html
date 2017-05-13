@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#button_1").click(function(e){
+          e.preventDefault();
+          $.ajax({type: "POST",
+          url: "http://localhost:3010/message/",
+          dataType: 'json',
+          data: JSON.stringify({msg:"hello!!"}),
+          crossDomain : true,
+          success:function(result){alert('ok')},
+          error:function(result){alert('error')}
+        });
+      });
+    });
+  </script>
+
+  </head>
+  <body>
+
+  <form method="post">
+    <button id="button_1" value="val_1" name="but1">button 1</button>
+  </form>
+
+  </body>
+</html>

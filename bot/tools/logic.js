@@ -3,6 +3,9 @@ const tcom = require('thesaurus-com');
 // import topics from db, different topics to talk about
 
 
+// logic does not reply back to the user
+// logic is used to understand
+
 // export base logic
 module.exports = {
   // basic understanding
@@ -11,8 +14,7 @@ module.exports = {
   1. Greeting
   2. Praise
   3. Attack
-  4. Leading
-  5. Question
+  4. On point
 
   */
 
@@ -20,11 +22,13 @@ module.exports = {
   // console.log(searched.synonyms);
 
   initiation: function(input) {
+    // console.log(input);
+
     // seach tool for key words
-    console.log( tcom.search("") );
+    // console.log( tcom.search("") );
 
     // understanding of the bot from messge
-    let understanding = null;
+    var understanding = null;
 
     // import from db greetings
     let greetings = [
@@ -89,16 +93,26 @@ module.exports = {
       'tool',
       'widget',
     ];
+    // question
+    let questions = [
+      "who",
+      "what",
+      "when",
+      "where",
+      "how"
+    ];
+    // lost import from db
+    let lost = [
+    ];
 
     // random select from array
-    let random = function(items) {return items[Math.floor(Math.random()*items.length)];}
+    // let random = function(items) {return items[Math.floor(Math.random()*items.length)];}
 
-    if (input=="init"){
+    if (input=="load"){
       console.log("loading basic logic module...");
     }else if(Array.isArray(input)) {
       // combined check
       let wholeMsg = input.join(" ");
-
       // greet finder
       greetings.map((greet)=>{
         if (wholeMsg.includes(greet)) {
@@ -107,11 +121,18 @@ module.exports = {
       });
       if (understanding == "Greeting") {
         console.log("The message is a greeting. Reply with greeting...");
-        console.log("replying...");
-        console.log(random(greetings));
       }
 
       // break down check
+      questions.map((question)=>{
+        if (wholeMsg.includes(question)) {
+          understanding = "Question";
+        }
+      });
+      if (understanding == "Question") {
+        console.log("The message is a question. Reply with response...");
+      }
+
     }
 
   },
