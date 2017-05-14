@@ -34,69 +34,74 @@ Design:
 Goals:
 
   Logic congruence: aware of thing the bot it self says
-
   Conversation continuity: aware of the things said by both parties in a converstion
 
 */
 
+
 class Brain {
   // readying bot
-  constructor(profile = null) {
-    // time passage
-    this.timePassed = 0;
+  constructor() {
+    // time passage is kept by front-end
+    this.self;
     // imported personality
-    this.personality = profile;
-
+    this.personality;
     // starter values
-    this.orientation = null;
-    this.interstLevel = 12;
+    this.intent;
+    this.interstLevel;
   };
 
   // start the bot
   start() {
-    // init interal logics
-    let timeInterval = setInterval( () => {
-      this.timePassed = this.timePassed + 1;
-      // log every 1 second / ticks
-      console.log('Current time is ' + this.timePassed + ' second!' );
-      if (this.timePassed == 25) {
-        console.log('You seem quite...today.');
-      }
-    }, 1000);
+    //bot naming
+    this.self = "B-2S0MA";
+    this.interstLevel = 12
+    // setting intent
+    const intents = ["Question", "Share", "Hide"];
+
+    // setting personality
+
+    console.log("Bot is being started...");
+    console.log(this);
   }
 
   // interact by listening
   interact(inputMsg) {
     //starter build auto decrease intrest level per interaction
-    // starting interation
-    if (this.interstLevel <= 12) {
-      let interpretation = this.read(inputMsg);
-      switch (interpretation[0]) {
-        case "question":
-          console.log("You are asking me a question...");
-          this.initiation(interpretation[1]);
-          this.timePassed = 0;
-          break;
-        default:
-          this.initiation(interpretation[1]);
-          this.timePassed = 0;
-          break;
-      }
-      this.interstLevel--;
-      console.log("interstLevel...", this.interstLevel);
-    }
+    // interact job is to set interstLevel and insert into correct db
+
+    // if (this.interstLevel <= 12) {
+    //   let interpretation = this.read(inputMsg);
+    //   switch (interpretation[0]) {
+    //     case "question":
+    //       console.log("You are asking me a question...");
+    //       this.initiation(interpretation[1]);
+    //       this.timePassed = 0;
+    //       break;
+    //     default:
+    //       this.initiation(interpretation[1]);
+    //       this.timePassed = 0;
+    //       break;
+    //   }
+    //   this.interstLevel--;
+    //   console.log("interstLevel...", this.interstLevel);
+    // }
 
   };
 
 };
 
+/* Adding functions to the bot */
 // message reading function of the bot
 const ReadImport = require('./tools/read.js');
 Brain.prototype.read = ReadImport.read;
 // base logic
 const LogicImport = require('./tools/logic.js');
 Brain.prototype.initiation = LogicImport.initiation;
-
-
+// imported profile for speech
+const ProfileImport = require('./tools/profile.js');
+Brain.prototype.blockSpeech = ProfileImport.blockSpeech;
+Brain.prototype.triangleSpeech = ProfileImport.triangleSpeech;
+Brain.prototype.trailSpeech = ProfileImport.trailSpeech;
 
 module.exports = Brain;
